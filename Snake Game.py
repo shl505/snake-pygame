@@ -22,6 +22,7 @@ frame_size_y = 480
 check_errors = pygame.init()
 # pygame.init() example output -> (6, 0)
 # second number in tuple gives number of errors
+
 if check_errors[1] > 0:
     print(f'[!] Had {check_errors[1]} errors when initialising game, exiting...')
     sys.exit(-1)
@@ -89,10 +90,12 @@ def show_score(choice, color, font, size):
 
 # Main logic
 while True:
+    time.sleep(0.25)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+
         # Whenever a key is pressed down
         elif event.type == pygame.KEYDOWN:
             # W -> Up; S -> Down; A -> Left; D -> Right
